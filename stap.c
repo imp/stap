@@ -141,9 +141,10 @@ stap_propinfo(void *arg, const char *prop_name, mac_prop_id_t prop_id,
 
 }
 
+#define	STAP_CALLBACKS	(MC_IOCTL | MC_GETCAPAB | MC_PROPERTIES)
 
 static mac_callbacks_t stap_mac_callbacks = {
-	.mc_callbacks	= 0,
+	.mc_callbacks	= STAP_CALLBACKS,
 	.mc_getstat	= stap_getstat,
 	.mc_start	= stap_start,
 	.mc_stop	= stap_stop,
